@@ -3,8 +3,9 @@ package com.sreekanth.dsalgoquestions;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.lang.String;
 
-public class MyStack<String> {
+public class MyStack {
     public PriorityQueue<String> myQueue1;
     public PriorityQueue<String> myQueue2;
 
@@ -16,29 +17,12 @@ public class MyStack<String> {
 
     public java.lang.String pop(){
         //Own pop implementation
-        if(!myQueue1.isEmpty()){
-            //move n-1 elements to q2.. dequeue nth element..
-            do{
-                String removedElement = myQueue1.remove();
-                myQueue2.add(removedElement);
-            }while (myQueue1.size() == 1);
-        }
-
-        if(!myQueue2.isEmpty()){
-            do{
-                String removedElement = myQueue2.remove();
-                myQueue1.add(removedElement);
-            }while(myQueue2.size() == 1);
-        }
-
-        System.out.println("After pop --> Queue1"+myQueue1);
-        System.out.println("After pop --> Queue2"+myQueue2);
-
-        return "";
+        java.lang.String removedItem = myQueue1.remove();
+        return (String) removedItem;
     }
 
     //Own push implementation
-    public void push(String iInput){
+    public void push(java.lang.String iInput){
             //push into Q2
             myQueue2.add(iInput);
 
